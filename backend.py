@@ -10,6 +10,7 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_tavily import TavilySearch
 from langchain_core.tools import tool
 import math
+from langchain_huggingface import HuggingFaceEmbeddings
 import requests
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -41,7 +42,8 @@ llm = ChatOpenAI(
 
 
 # Embeddings model
-embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+# embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
 
 
 
